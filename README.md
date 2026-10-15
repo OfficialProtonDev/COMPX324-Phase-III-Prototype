@@ -8,20 +8,18 @@ flows behind them.
 
 ## Using it
 
-- On a desktop browser the app runs inside a phone frame. The panel beside it
-  shows the current screen, lets you jump to any screen, and has
-  **Restart prototype** to clear your changes.
-- On a phone the app fills the screen.
-- Browser Back/Forward move between screens, and every screen has its own URL
-  (for example `#/Goal-details?id=road-trip`), so you can link straight to one.
-- Goals you create, edit or pin are saved in your browser (localStorage) and
-  show up on Home, Goals and Goal details.
+- On a desktop browser the app runs inside a phone frame; on a phone it fills
+  the screen.
+- Browser Back/Forward move between screens.
+- Goals you create, edit or pin show up on Home, Goals and Goal details.
+- Reloading the page restarts the prototype: it opens on Home with the
+  original data.
 
 ## Layout
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | Phone shell: frame, status bar, screen transitions, history and the side panel |
+| `index.html` | Phone shell: frame, status bar, screen transitions and history |
 | `screens/*.dc.html` | One file per screen (390 × 844 design), rendered by the bundled `dc-runtime` |
 | `screens/assets/proto.js` | Shared goals store and the link bridge that hands navigation to the shell |
 | `screens/assets/` | React 18, the dc runtime and the Figtree/Jost fonts, all served locally |
