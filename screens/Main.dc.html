@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="assets/react.production.min.js"></script>
+<script src="assets/react-dom.production.min.js"></script>
+<script src="assets/proto.js"></script>
+<script src="assets/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+html,body,#dc-root,#dc-root>div{height:100%}
+body{margin:0;overflow:hidden;background:#F2F7EC;-webkit-tap-highlight-color:transparent}
+a{color:#2E7333}a:hover{color:#1C3020}
+main{scrollbar-width:none}main::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div style="position: relative; width: 100%; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; background: #F2F7EC; color: #1C3020; font-family: 'Figtree', 'Segoe UI', system-ui, sans-serif; font-size: 15px; line-height: 1.4">
+<main style="flex: 1; min-height: 0; overflow-y: auto">
+<div style="display: flex; flex-direction: column; gap: 28px; padding: 28px 20px 32px">
+
+<header style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<p style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500; color: #4A5F4D">Saturday, 10 October</p>
+<h1 style="margin: 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 32px; line-height: 38px; font-weight: 600; letter-spacing: -0.01em">Kia ora, Sophie</h1>
+</div>
+<a href="#" aria-label="Your profile" style="display: block; flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; overflow: hidden; background: #C9EBA5; text-decoration: none"><img src="data:image/jpeg;base64,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" alt="" width="48" height="48" style="display: block; width: 48px; height: 48px; object-fit: cover"></a>
+</header>
+
+<section aria-label="Safe to spend" style="position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 16px; padding: 22px 16px 16px; border-radius: 28px; background: #C9EBA5">
+<div aria-hidden="true" style="position: absolute; top: 18px; right: 18px; width: 70px; height: 70px; background-image: radial-gradient(circle, rgba(46,115,51,0.38) 1.6px, transparent 2.1px); background-size: 14px 14px"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 4px; padding: 0 6px">
+<p style="margin: 0; font-size: 15px; line-height: 20px; font-weight: 600">Safe to spend</p>
+<p style="margin: 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 56px; line-height: 56px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums">$878.50</p>
+<p style="margin: 2px 0 0; font-size: 14px; line-height: 20px; color: #2B4A2F">until payday · Wed 21 Oct</p>
+</div>
+<div style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<a href="A-Transactions.dc.html" style="display: flex; align-items: center; gap: 8px; padding: 12px; border-radius: 16px; background: rgba(255,255,255,0.72); color: #1C3020; text-decoration: none">
+<svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<span style="font-size: 13px; line-height: 18px; color: #2B4A2F; white-space: nowrap">Available balance</span>
+<span style="font-size: 17px; line-height: 22px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap">$1,284.50</span>
+</div>
+</a>
+<a href="A-Budget.dc.html" style="display: flex; align-items: center; gap: 8px; padding: 12px; border-radius: 16px; background: rgba(255,255,255,0.72); color: #1C3020; text-decoration: none">
+<svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<span style="font-size: 13px; line-height: 18px; color: #2B4A2F; white-space: nowrap">Upcoming bills</span>
+<span style="font-size: 17px; line-height: 22px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap">$406.00</span>
+</div>
+</a>
+</div>
+</section>
+
+<section aria-labelledby="a-pinned-title" style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px">
+<h2 id="a-pinned-title" style="margin: 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 21px; line-height: 26px; font-weight: 600">Pinned goals</h2>
+<a href="A-Goals.dc.html" style="display: flex; align-items: center; gap: 2px; min-height: 44px; padding: 0 0 0 4px; font-size: 15px; font-weight: 600; text-decoration: none">See all<svg width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0"><path d="m9 18 6-6-6-6"></path></svg></a>
+</div>
+<sc-if value="{{hasPinned}}" hint-placeholder-val="{{ true }}">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{pinned}}" as="g" hint-placeholder-count="2">
+<a href="{{g.href}}" style="display: flex; flex-direction: column; padding: 16px; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); color: #1C3020; text-decoration: none">
+<span style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="19" height="19" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="{{g.icon}}"></path></svg></span>
+<span style="margin-top: 12px; font-size: 16px; line-height: 21px; font-weight: 600; overflow-wrap: anywhere">{{g.name}}</span>
+<span style="margin-top: 4px; font-size: 14px; line-height: 19px; color: #4A5F4D; font-variant-numeric: tabular-nums">{{g.progress}}<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{g.srPriority}}</span></span>
+<span aria-hidden="true" style="display: flex; margin-top: auto; padding-top: 12px"><span style="display: flex; flex: 1; height: 8px; border-radius: 4px; background: #E1ECD6; overflow: hidden"><span style="width: {{g.pct}}%; border-radius: 4px; background: {{g.colour}}"></span></span></span>
+</a>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{noPinned}}" hint-placeholder-val="{{ false }}">
+<a href="A-Goals.dc.html" style="display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 22px; border: 1.5px dashed #B9CDA8; color: #1C3020; text-decoration: none">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M12 17v5"></path><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; line-height: 21px; font-weight: 600">No pinned goals</span><span style="font-size: 14px; line-height: 19px; color: #4A5F4D">Pin a goal to keep it on Home.</span></span>
+</a>
+</sc-if>
+</section>
+
+<section aria-labelledby="a-insights-title" style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px">
+<h2 id="a-insights-title" style="margin: 0; display: flex; align-items: center; gap: 8px; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 21px; line-height: 26px; font-weight: 600">New insights <span style="display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 24px; padding: 0 7px; box-sizing: border-box; border-radius: 12px; background: #2E7333; color: #FFFFFF; font-family: 'Figtree', 'Segoe UI', system-ui, sans-serif; font-size: 13px; line-height: 1; font-weight: 700">3</span></h2>
+<a href="Insights.dc.html" style="display: flex; align-items: center; gap: 2px; min-height: 44px; padding: 0 0 0 4px; font-size: 15px; font-weight: 600; text-decoration: none">See all<svg width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0"><path d="m9 18 6-6-6-6"></path></svg></a>
+</div>
+<a href="Insight-fuel.dc.html" style="display: flex; gap: 14px; padding: 16px 12px 16px 16px; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); color: #1C3020; text-decoration: none">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 22h12"></path><path d="M4 9h10"></path><path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18"></path><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0">
+<h3 style="margin: 0; font-size: 16px; line-height: 21px; font-weight: 600">Fuel was your biggest single purchase this week</h3>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #4A5F4D">$72.40 at Fuel Stop Te Rapa, more than either grocery shop ($62.15 and $55.68).</p>
+</div>
+<svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="align-self: center; flex-shrink: 0; fill: none; stroke: #4A5F4D; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="m9 18 6-6-6-6"></path></svg>
+</a>
+<article style="display: flex; gap: 14px; padding: 16px; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06)">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M13 16H8"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 5px; margin-bottom: 4px; padding: 3px 10px 3px 8px; border-radius: 999px; background: #1C3020; color: #FFFFFF; font-size: 12px; line-height: 18px; font-weight: 700"><svg width="13" height="13" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>AI insight</span>
+<h3 style="margin: 0; font-size: 16px; line-height: 21px; font-weight: 600">Coffee beans were a third of your grocery shop</h3>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #4A5F4D">$18.50 of $55.68 at Corner Grocer, read from your e-receipt.</p>
+</div>
+</article>
+</section>
+
+</div>
+</main>
+<nav aria-label="Main" style="flex-shrink: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 8px 0 16px; background: #FFFFFF; border-top: 1px solid #DDE8D3">
+<a href="Main.dc.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #1C3020; font-size: 11.5px; line-height: 16px; font-weight: 700; white-space: nowrap; text-decoration: none"><span style="position: relative; display: flex; align-items: center; justify-content: center; width: 56px; height: 30px"><svg aria-hidden="true" width="64" height="36" sc-camel-view-box="0 0 64 36" style="position: absolute; top: -3px; left: -4px"><path d="M2 19C0.8 14.6 3.3 8.9 7 6C10.7 3.1 17.5 2.1 24 1.5C30.5 0.9 40 1.1 46 2.5C52 3.9 57.8 5.9 60 10C62.2 14.1 62.3 23 59 27C55.7 31 47.5 33.1 40 34C32.5 34.9 20.3 35 14 32.5C7.7 30 3.2 23.4 2 19Z" style="fill: #C9EBA5"></path></svg><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="position: relative; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span>Home</a>
+<a href="A-Goals.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>Goals</a>
+<a href="Insights.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span>Insights</a>
+<a href="A-Transactions.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 12h.01"></path><path d="M3 18h.01"></path><path d="M3 6h.01"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M8 6h13"></path></svg></span>Transactions</a>
+<a href="A-Budget.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></span>Budget</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}">
+class Component extends DCLogic {
+  renderVals() {
+    const pinned = Proto.goals().filter((g) => g.pinned);
+    return {
+      pinned: pinned,
+      hasPinned: pinned.length > 0,
+      noPinned: pinned.length === 0
+    };
+  }
+}
+</script>
+
+
+</body></html>

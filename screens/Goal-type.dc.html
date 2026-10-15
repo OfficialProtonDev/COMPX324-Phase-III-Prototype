@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>New goal: choose a type</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="assets/react.production.min.js"></script>
+<script src="assets/react-dom.production.min.js"></script>
+<script src="assets/proto.js"></script>
+<script src="assets/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+html,body,#dc-root,#dc-root>div{height:100%}
+body{margin:0;overflow:hidden;background:#F2F7EC;-webkit-tap-highlight-color:transparent}
+a{color:#2E7333}a:hover{color:#1C3020}
+main{scrollbar-width:none}main::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div style="position: relative; width: 100%; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; background: #F2F7EC; color: #1C3020; font-family: 'Figtree', 'Segoe UI', system-ui, sans-serif; font-size: 15px; line-height: 1.4">
+<header style="flex-shrink: 0; display: flex; align-items: center; gap: 4px; padding: 12px 12px 4px">
+<a href="A-Goals.dc.html" aria-label="Back to Goals" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; color: #1C3020; text-decoration: none"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"><path d="m15 18-6-6 6-6"></path></svg></a>
+<h1 style="margin: 0; flex: 1; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600">New goal</h1>
+</header>
+<main style="flex: 1; min-height: 0; overflow-y: auto">
+<div style="display: flex; flex-direction: column; gap: 20px; padding: 8px 20px 28px">
+
+<h2 style="margin: 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -0.01em">What are you saving for?</h2>
+
+<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<li><a href="New-goal.dc.html?type=home" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 148px; padding: 16px; box-sizing: border-box; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); color: #1C3020; text-align: center; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 58% 42% 55% 45% / 48% 54% 46% 52%; background: #E6F4D8; color: #2E7333"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span><span style="font-size: 16px; line-height: 21px; font-weight: 600">Buy a home</span></a></li>
+<li><a href="New-goal.dc.html?type=debt" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 148px; padding: 16px; box-sizing: border-box; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); color: #1C3020; text-align: center; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 45% 55% 42% 58% / 54% 46% 52% 48%; background: #E6F4D8; color: #2E7333"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><rect width="20" height="14" x="2" y="5" rx="2"></rect><path d="M2 10h20"></path></svg></span><span style="font-size: 16px; line-height: 21px; font-weight: 600">Pay off debt</span></a></li>
+<li><a href="New-goal.dc.html?type=car" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 148px; padding: 16px; box-sizing: border-box; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); color: #1C3020; text-align: center; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 52% 48% 60% 40% / 44% 58% 42% 56%; background: #E6F4D8; color: #2E7333"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg></span><span style="font-size: 16px; line-height: 21px; font-weight: 600">Buy a car</span></a></li>
+<li><a href="New-goal.dc.html?type=retirement" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 148px; padding: 16px; box-sizing: border-box; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); color: #1C3020; text-align: center; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 58% 42% 55% 45% / 48% 54% 46% 52%; background: #E6F4D8; color: #2E7333"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><path d="M9 9h.01"></path><path d="M15 9h.01"></path></svg></span><span style="font-size: 16px; line-height: 21px; font-weight: 600">Plan for retirement</span></a></li>
+<li><a href="New-goal.dc.html?type=vacation" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 148px; padding: 16px; box-sizing: border-box; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); color: #1C3020; text-align: center; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 45% 55% 42% 58% / 54% 46% 52% 48%; background: #E6F4D8; color: #2E7333"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M22 12a10.06 10.06 1 0 0-20 0Z"></path><path d="M12 12v8a2 2 0 0 0 4 0"></path><path d="M12 2v1"></path></svg></span><span style="font-size: 16px; line-height: 21px; font-weight: 600">Plan a vacation</span></a></li>
+<li><a href="New-goal.dc.html?type=other" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 148px; padding: 16px; box-sizing: border-box; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); color: #1C3020; text-align: center; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 52% 48% 60% 40% / 44% 58% 42% 56%; background: #E6F4D8; color: #2E7333"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></span><span style="font-size: 16px; line-height: 21px; font-weight: 600">Other</span></a></li>
+</ul>
+
+</div>
+</main>
+<nav aria-label="Main" style="flex-shrink: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 8px 0 16px; background: #FFFFFF; border-top: 1px solid #DDE8D3">
+<a href="Main.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span>Home</a>
+<a href="A-Goals.dc.html" aria-current="true" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #1C3020; font-size: 11.5px; line-height: 16px; font-weight: 700; white-space: nowrap; text-decoration: none"><span style="position: relative; display: flex; align-items: center; justify-content: center; width: 56px; height: 30px"><svg aria-hidden="true" width="64" height="36" sc-camel-view-box="0 0 64 36" style="position: absolute; top: -3px; left: -4px"><path d="M2 19C0.8 14.6 3.3 8.9 7 6C10.7 3.1 17.5 2.1 24 1.5C30.5 0.9 40 1.1 46 2.5C52 3.9 57.8 5.9 60 10C62.2 14.1 62.3 23 59 27C55.7 31 47.5 33.1 40 34C32.5 34.9 20.3 35 14 32.5C7.7 30 3.2 23.4 2 19Z" style="fill: #C9EBA5"></path></svg><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="position: relative; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>Goals</a>
+<a href="Insights.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span>Insights</a>
+<a href="A-Transactions.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 12h.01"></path><path d="M3 18h.01"></path><path d="M3 6h.01"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M8 6h13"></path></svg></span>Transactions</a>
+<a href="A-Budget.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></span>Budget</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+
+
+</body></html>

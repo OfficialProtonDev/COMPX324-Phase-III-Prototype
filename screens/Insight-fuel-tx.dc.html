@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Purchases in this insight</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="assets/react.production.min.js"></script>
+<script src="assets/react-dom.production.min.js"></script>
+<script src="assets/proto.js"></script>
+<script src="assets/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+html,body,#dc-root,#dc-root>div{height:100%}
+body{margin:0;overflow:hidden;background:#F2F7EC;-webkit-tap-highlight-color:transparent}
+a{color:#2E7333}a:hover{color:#1C3020}
+main{scrollbar-width:none}main::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div style="position: relative; width: 100%; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; background: #F2F7EC; color: #1C3020; font-family: 'Figtree', 'Segoe UI', system-ui, sans-serif; font-size: 15px; line-height: 1.4">
+<header style="flex-shrink: 0; display: flex; align-items: center; gap: 4px; padding: 12px 12px 4px">
+<a href="Insight-fuel.dc.html" aria-label="Back to insight" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; color: #1C3020; text-decoration: none"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"><path d="m15 18-6-6 6-6"></path></svg></a>
+<h1 style="margin: 0; flex: 1; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600">Purchases in this insight</h1>
+
+</header>
+<main style="flex: 1; min-height: 0; overflow-y: auto">
+<div style="display: flex; flex-direction: column; gap: 20px; padding: 8px 20px 28px">
+
+<a href="Insight-fuel.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 12px 12px 12px 14px; border-radius: 18px; background: #E6F4D8; color: #1C3020; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #FFFFFF; color: #2E7333"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 22h12"></path><path d="M4 9h10"></path><path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18"></path><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5"></path></svg></span><span style="flex: 1; min-width: 0; font-size: 15px; line-height: 21px; font-weight: 600">Fuel was your biggest single purchase this week</span><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="flex-shrink: 0; fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="m9 18 6-6-6-6"></path></svg></a>
+
+<section aria-label="Summary" style="display: flex; flex-direction: column; padding: 20px; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06)">
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #4A5F4D">Sun 4 Oct – Sat 10 Oct</p>
+<p style="margin: 2px 0 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 44px; line-height: 48px; font-weight: 600; letter-spacing: -0.02em">$277.33</p>
+<p style="margin: 0; font-size: 13.5px; line-height: 19px; color: #4A5F4D">Not counting bills like rent</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px">
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 16px; background: #F2F7EC"><span style="font-size: 13px; line-height: 18px; color: #4A5F4D">Purchases</span><span style="font-size: 17px; line-height: 22px; font-weight: 700; font-variant-numeric: tabular-nums">10</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 16px; background: #F2F7EC"><span style="font-size: 13px; line-height: 18px; color: #4A5F4D">With e-receipt</span><span style="font-size: 17px; line-height: 22px; font-weight: 700; font-variant-numeric: tabular-nums">3</span></div>
+</div>
+</section>
+
+<div role="group" aria-label="Show" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{chips}}" as="ch" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{ch.pressed}}" sc-camel-on-click="{{ch.pick}}" style="min-height: 44px; padding: 0 18px; border: 1.5px solid {{ch.bd}}; border-radius: 999px; background: {{ch.bg}}; color: {{ch.fg}}; font-family: inherit; font-size: 15px; font-weight: {{ch.weight}}; cursor: pointer">{{ch.label}}</button>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 20px">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="5">
+<section style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-size: 12.5px; line-height: 18px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5F4D">{{g.label}}</h2>
+<ul style="list-style: none; margin: 0; padding: 0; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); overflow: hidden">
+<sc-for list="{{g.rows}}" as="r" hint-placeholder-count="2">
+<li style="border-top: {{r.divider}}; background: {{r.rowBg}}">
+<sc-if value="{{r.link}}" hint-placeholder-val="{{ false }}">
+<a href="E-receipt.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; color: #1C3020; text-decoration: none">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: {{r.iconBg}}; color: {{r.iconColor}}"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="{{r.icon}}"></path></svg></span>
+<span style="display: flex; flex-direction: column; flex: 1; min-width: 0">
+<span style="font-size: 16px; line-height: 21px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
+<span style="font-size: 14px; line-height: 19px; color: #4A5F4D; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.meta}}</span>
+<sc-if value="{{r.biggest}}" hint-placeholder-val="{{ false }}"><span style="align-self: flex-start; margin-top: 6px; padding: 2px 8px; border-radius: 6px; background: #E9A91C; color: #1C3020; font-size: 11px; line-height: 16px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase">Biggest this week</span></sc-if>
+</span>
+<sc-if value="{{r.receipt}}" hint-placeholder-val="{{ false }}">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" role="img" aria-label="Has e-receipt" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M13 16H8"></path></svg></span>
+</sc-if>
+<span style="flex-shrink: 0; font-size: 16px; line-height: 21px; font-weight: 700; color: {{r.amountColor}}; font-variant-numeric: tabular-nums">{{r.amountText}}</span>
+</a>
+</sc-if>
+<sc-if value="{{r.plain}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: {{r.iconBg}}; color: {{r.iconColor}}"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="{{r.icon}}"></path></svg></span>
+<span style="display: flex; flex-direction: column; flex: 1; min-width: 0">
+<span style="font-size: 16px; line-height: 21px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
+<span style="font-size: 14px; line-height: 19px; color: #4A5F4D; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.meta}}</span>
+<sc-if value="{{r.biggest}}" hint-placeholder-val="{{ false }}"><span style="align-self: flex-start; margin-top: 6px; padding: 2px 8px; border-radius: 6px; background: #E9A91C; color: #1C3020; font-size: 11px; line-height: 16px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase">Biggest this week</span></sc-if>
+</span>
+<sc-if value="{{r.receipt}}" hint-placeholder-val="{{ false }}">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" role="img" aria-label="Has e-receipt" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M13 16H8"></path></svg></span>
+</sc-if>
+<span style="flex-shrink: 0; font-size: 16px; line-height: 21px; font-weight: 700; color: {{r.amountColor}}; font-variant-numeric: tabular-nums">{{r.amountText}}</span>
+</div>
+</sc-if>
+</li>
+</sc-for>
+</ul>
+</section>
+</sc-for>
+</div>
+
+<p style="margin: 0; padding: 0 12px; text-align: center; font-size: 13.5px; line-height: 20px; color: #4A5F4D">Rent, power and StreamTunes are bills, so they aren’t counted here.</p>
+
+</div>
+</main>
+<nav aria-label="Main" style="flex-shrink: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 8px 0 16px; background: #FFFFFF; border-top: 1px solid #DDE8D3">
+<a href="Main.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span>Home</a>
+<a href="A-Goals.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>Goals</a>
+<a href="Insights.dc.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #1C3020; font-size: 11.5px; line-height: 16px; font-weight: 700; white-space: nowrap; text-decoration: none"><span style="position: relative; display: flex; align-items: center; justify-content: center; width: 56px; height: 30px"><svg aria-hidden="true" width="64" height="36" sc-camel-view-box="0 0 64 36" style="position: absolute; top: -3px; left: -4px"><path d="M2 19C0.8 14.6 3.3 8.9 7 6C10.7 3.1 17.5 2.1 24 1.5C30.5 0.9 40 1.1 46 2.5C52 3.9 57.8 5.9 60 10C62.2 14.1 62.3 23 59 27C55.7 31 47.5 33.1 40 34C32.5 34.9 20.3 35 14 32.5C7.7 30 3.2 23.4 2 19Z" style="fill: #C9EBA5"></path></svg><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="position: relative; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span>Insights</a>
+<a href="A-Transactions.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 12h.01"></path><path d="M3 18h.01"></path><path d="M3 6h.01"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M8 6h13"></path></svg></span>Transactions</a>
+<a href="A-Budget.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></span>Budget</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}">
+const ICON = {
+  fuel: 'M3 22h12 M4 9h10 M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18 M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5',
+  cart: 'M7 21a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M18 21a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12',
+  coffee: 'M10 2v2 M14 2v2 M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1 M6 2v2',
+  wrench: 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z',
+};
+const ROWS = [
+  { day: 'Sat 10 Oct', name: 'Grounded Café', cat: 'Eating out', time: 'Pending', amount: 6.50, icon: 'coffee', receipt: false, link: false, pending: true, biggest: false },
+  { day: 'Sat 10 Oct', name: 'Corner Grocer', cat: 'Groceries', time: '10:42 am', amount: 55.68, icon: 'cart', receipt: true, link: true, pending: false, biggest: false },
+  { day: 'Fri 9 Oct', name: 'Fuel Stop Te Rapa', cat: 'Transport', time: '5:58 pm', amount: 72.40, icon: 'fuel', receipt: true, link: false, pending: false, biggest: true },
+  { day: 'Fri 9 Oct', name: 'Grounded Café', cat: 'Eating out', time: '3:15 pm', amount: 5.20, icon: 'coffee', receipt: false, link: false, pending: false, biggest: false },
+  { day: 'Thu 8 Oct', name: 'Campus Café', cat: 'Eating out', time: '12:35 pm', amount: 9.80, icon: 'coffee', receipt: false, link: false, pending: false, biggest: false },
+  { day: 'Wed 7 Oct', name: 'Hardware Hub', cat: 'Home', time: '1:20 pm', amount: 38.90, icon: 'wrench', receipt: true, link: false, pending: false, biggest: false },
+  { day: 'Tue 6 Oct', name: 'Corner Grocer', cat: 'Groceries', time: '6:30 pm', amount: 62.15, icon: 'cart', receipt: false, link: false, pending: false, biggest: false },
+  { day: 'Tue 6 Oct', name: 'Campus Café', cat: 'Eating out', time: '9:05 am', amount: 8.40, icon: 'coffee', receipt: false, link: false, pending: false, biggest: false },
+  { day: 'Mon 5 Oct', name: 'Campus Café', cat: 'Eating out', time: '8:50 am', amount: 5.90, icon: 'coffee', receipt: false, link: false, pending: false, biggest: false },
+  { day: 'Sun 4 Oct', name: 'Grounded Café', cat: 'Eating out', time: '10:20 am', amount: 12.40, icon: 'coffee', receipt: false, link: false, pending: false, biggest: false }
+];
+const CHIPS = [{ id: 'all', label: 'All 10' }, { id: 'receipt', label: 'Has e-receipt' }, { id: 'largest', label: 'Largest first' }];
+function money(n) {
+  return '−$' + n.toFixed(2);
+}
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const chip = s.chip || 'all';
+    const row = (r, i, withDay) => ({
+      name: r.name,
+      meta: r.cat + ' · ' + (withDay && !r.pending ? r.day : r.time),
+      icon: ICON[r.icon],
+      iconBg: r.pending ? '#EEF3E8' : (r.biggest ? '#FCEFD2' : '#E6F4D8'),
+      iconColor: r.pending ? '#4A5F4D' : (r.biggest ? '#8A5A00' : '#2E7333'),
+      amountText: money(r.amount),
+      amountColor: r.pending ? '#4A5F4D' : '#1C3020',
+      receipt: r.receipt,
+      biggest: r.biggest,
+      link: r.link,
+      plain: !r.link,
+      rowBg: r.biggest ? '#FFF7E6' : '#FFFFFF',
+      divider: i === 0 ? '0' : '1px solid #E8F0E0'
+    });
+    let groups;
+    if (chip === 'largest') {
+      const sorted = ROWS.slice().sort((a, b) => b.amount - a.amount);
+      groups = [{ label: 'Largest first', rows: sorted.map((r, i) => row(r, i, true)) }];
+    } else {
+      const list = chip === 'receipt' ? ROWS.filter((r) => r.receipt) : ROWS;
+      groups = [];
+      list.forEach((r) => {
+        let g = groups.find((x) => x.label === r.day);
+        if (!g) { g = { label: r.day, items: [] }; groups.push(g); }
+        g.items.push(r);
+      });
+      groups = groups.map((g) => ({ label: g.label, rows: g.items.map((r, i) => row(r, i, false)) }));
+    }
+    return {
+      groups: groups,
+      chips: CHIPS.map((c) => {
+        const on = c.id === chip;
+        return {
+          label: c.label,
+          pressed: on,
+          bg: on ? '#2E7333' : '#FFFFFF',
+          fg: on ? '#FFFFFF' : '#1C3020',
+          bd: on ? '#2E7333' : '#C5D6B8',
+          weight: on ? '700' : '600',
+          pick: () => this.setState({ chip: c.id })
+        };
+      })
+    };
+  }
+}
+</script>
+
+
+</body></html>

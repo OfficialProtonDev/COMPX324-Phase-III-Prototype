@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Transactions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="assets/react.production.min.js"></script>
+<script src="assets/react-dom.production.min.js"></script>
+<script src="assets/proto.js"></script>
+<script src="assets/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+html,body,#dc-root,#dc-root>div{height:100%}
+body{margin:0;overflow:hidden;background:#F2F7EC;-webkit-tap-highlight-color:transparent}
+a{color:#2E7333}a:hover{color:#1C3020}
+input::placeholder{color:#5B6F5D;opacity:1}
+main{scrollbar-width:none}main::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div style="position: relative; width: 100%; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; background: #F2F7EC; color: #1C3020; font-family: 'Figtree', 'Segoe UI', system-ui, sans-serif; font-size: 15px; line-height: 1.4">
+<main style="flex: 1; min-height: 0; overflow-y: auto">
+<div style="display: flex; flex-direction: column; gap: 20px; padding: 28px 20px 28px">
+
+<header style="display: flex; align-items: center; justify-content: space-between; min-height: 44px">
+<h1 style="margin: 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 32px; line-height: 38px; font-weight: 600; letter-spacing: -0.01em">Transactions</h1>
+<button type="button" aria-label="More options" sc-camel-on-click="{{openMore}}" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #FFFFFF; color: #1C3020; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); cursor: pointer"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></button>
+</header>
+
+<section aria-label="{{acct.name}}" style="display: flex; flex-direction: column; padding: 20px; border-radius: 24px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06)">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 22h18"></path><path d="M6 18v-7"></path><path d="M10 18v-7"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M12 2 20 7H4z"></path></svg></span>
+<div style="display: flex; flex-direction: column; flex: 1; min-width: 0">
+<span style="font-size: 17px; line-height: 22px; font-weight: 700">{{acct.name}}</span>
+<span style="font-size: 14px; line-height: 19px; color: #4A5F4D; font-variant-numeric: tabular-nums">{{acct.number}}</span>
+</div>
+<button type="button" sc-camel-on-click="{{openSwitch}}" style="flex-shrink: 0; min-height: 44px; padding: 0 16px; border: 1.5px solid #2E7333; border-radius: 999px; background: transparent; color: #2E7333; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Switch</button>
+</div>
+<p style="margin: 18px 0 0; font-size: 14px; line-height: 20px; color: #4A5F4D">Available balance</p>
+<p style="margin: 2px 0 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 44px; line-height: 46px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums">{{acct.balance}}</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px">
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 16px; background: #E6F4D8">
+<span style="font-size: 13px; line-height: 18px; color: #2B4A2F">In · October</span>
+<span style="font-size: 17px; line-height: 22px; font-weight: 700; color: #2E7333; font-variant-numeric: tabular-nums">{{acct.inText}}</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 16px; background: #F2F7EC">
+<span style="font-size: 13px; line-height: 18px; color: #4A5F4D">Out · October</span>
+<span style="font-size: 17px; line-height: 22px; font-weight: 700; font-variant-numeric: tabular-nums">{{acct.outText}}</span>
+</div>
+</div>
+</section>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; gap: 10px">
+<div style="display: flex; flex: 1; align-items: center; min-width: 0; height: 52px; padding: 0 6px 0 16px; box-sizing: border-box; border-radius: 16px; background: #FFFFFF; border: 1px solid #D5E2CA; color: #4A5F4D">
+<label style="display: flex; flex: 1; align-items: center; gap: 10px; min-width: 0; height: 100%">
+<svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Search transactions</span>
+<input type="text" value="{{query}}" sc-camel-on-change="{{setQuery}}" placeholder="Search merchant or amount" style="flex: 1; min-width: 0; height: 100%; padding: 0; border: 0; outline: none; background: transparent; color: #1C3020; font-family: inherit; font-size: 15px">
+</label>
+<sc-if value="{{hasQuery}}" hint-placeholder-val="{{ false }}">
+<button type="button" aria-label="Clear search" sc-camel-on-click="{{clearQuery}}" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #4A5F4D; cursor: pointer"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+</sc-if>
+</div>
+<button type="button" aria-label="{{filterLabel}}" sc-camel-on-click="{{openFilter}}" style="position: relative; display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 52px; height: 52px; padding: 0; border: 1px solid {{filterBd}}; border-radius: 16px; background: #FFFFFF; color: #1C3020; cursor: pointer"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 6h18"></path><path d="M7 12h10"></path><path d="M10 18h4"></path></svg>
+<sc-if value="{{catsActive}}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position: absolute; top: -7px; right: -7px; display: flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 6px; box-sizing: border-box; border-radius: 11px; background: #2E7333; color: #FFFFFF; font-size: 12px; line-height: 1; font-weight: 700">{{catsCount}}</span></sc-if>
+</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" aria-pressed="{{chipAll.pressed}}" sc-camel-on-click="{{pickAll}}" style="min-height: 44px; padding: 0 18px; border: 1.5px solid {{chipAll.bd}}; border-radius: 999px; background: {{chipAll.bg}}; color: {{chipAll.fg}}; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">All</button>
+<button type="button" aria-pressed="{{chipIn.pressed}}" sc-camel-on-click="{{pickIn}}" style="min-height: 44px; padding: 0 18px; border: 1.5px solid {{chipIn.bd}}; border-radius: 999px; background: {{chipIn.bg}}; color: {{chipIn.fg}}; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Money in</button>
+<button type="button" aria-pressed="{{chipOut.pressed}}" sc-camel-on-click="{{pickOut}}" style="min-height: 44px; padding: 0 18px; border: 1.5px solid {{chipOut.bd}}; border-radius: 999px; background: {{chipOut.bg}}; color: {{chipOut.fg}}; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Money out</button>
+<button type="button" aria-pressed="{{chipReceipt.pressed}}" aria-label="Has e-receipt" title="Has e-receipt" sc-camel-on-click="{{pickReceipt}}" style="display: flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1.5px solid {{chipReceipt.bd}}; border-radius: 999px; background: {{chipReceipt.bg}}; color: {{chipReceipt.fg}}; font-family: inherit; cursor: pointer"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: {{chipReceipt.icon}}; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M13 16H8"></path></svg></button>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 20px">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="4">
+<section style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-size: 12.5px; line-height: 18px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5F4D">{{g.label}}</h2>
+<ul style="list-style: none; margin: 0; padding: 0; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); overflow: hidden">
+<sc-for list="{{g.rows}}" as="r" hint-placeholder-count="2">
+<li style="border-top: {{r.divider}}">
+<sc-if value="{{r.link}}" hint-placeholder-val="{{ false }}">
+<a href="E-receipt.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; color: #1C3020; text-decoration: none">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: {{r.iconBg}}; color: {{r.iconColor}}"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="{{r.icon}}"></path></svg></span>
+<span style="display: flex; flex-direction: column; flex: 1; min-width: 0">
+<span style="font-size: 16px; line-height: 21px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
+<span style="font-size: 14px; line-height: 19px; color: #4A5F4D; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.meta}}</span>
+</span>
+<sc-if value="{{r.receipt}}" hint-placeholder-val="{{ false }}">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" role="img" aria-label="Has e-receipt" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M13 16H8"></path></svg></span>
+</sc-if>
+<span style="flex-shrink: 0; font-size: 16px; line-height: 21px; font-weight: 700; color: {{r.amountColor}}; font-variant-numeric: tabular-nums">{{r.amountText}}</span>
+</a>
+</sc-if>
+<sc-if value="{{r.plain}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: {{r.iconBg}}; color: {{r.iconColor}}"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="{{r.icon}}"></path></svg></span>
+<span style="display: flex; flex-direction: column; flex: 1; min-width: 0">
+<span style="font-size: 16px; line-height: 21px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
+<span style="font-size: 14px; line-height: 19px; color: #4A5F4D; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.meta}}</span>
+</span>
+<sc-if value="{{r.receipt}}" hint-placeholder-val="{{ false }}">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" role="img" aria-label="Has e-receipt" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M13 16H8"></path></svg></span>
+</sc-if>
+<span style="flex-shrink: 0; font-size: 16px; line-height: 21px; font-weight: 700; color: {{r.amountColor}}; font-variant-numeric: tabular-nums">{{r.amountText}}</span>
+</div>
+</sc-if>
+</li>
+</sc-for>
+</ul>
+</section>
+</sc-for>
+
+<sc-if value="{{noResults}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 28px 20px; border-radius: 22px; background: #FFFFFF; text-align: center; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06)">
+<p style="margin: 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 20px; line-height: 26px; font-weight: 600">No transactions match</p>
+<p style="margin: 0; font-size: 14.5px; line-height: 21px; color: #4A5F4D">Try a different search, or clear your filters.</p>
+<button type="button" sc-camel-on-click="{{clearAll}}" style="margin-top: 6px; min-height: 44px; padding: 0 18px; border: 1.5px solid #2E7333; border-radius: 999px; background: #FFFFFF; color: #2E7333; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">Clear filters</button>
+</div>
+</sc-if>
+</div>
+
+<sc-if value="{{canLoad}}" hint-placeholder-val="{{ true }}">
+<button type="button" sc-camel-on-click="{{loadEarlier}}" style="min-height: 52px; border: 1.5px dashed #9DBB8A; border-radius: 16px; background: transparent; color: #2E7333; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">Load earlier transactions</button>
+</sc-if>
+<sc-if value="{{showEnd}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 8px 0; text-align: center; font-size: 14px; line-height: 20px; color: #4A5F4D">That's everything for October</p>
+</sc-if>
+
+</div>
+</main>
+<nav aria-label="Main" style="flex-shrink: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 8px 0 16px; background: #FFFFFF; border-top: 1px solid #DDE8D3">
+<a href="Main.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span>Home</a>
+<a href="A-Goals.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>Goals</a>
+<a href="Insights.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span>Insights</a>
+<a href="A-Transactions.dc.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #1C3020; font-size: 11.5px; line-height: 16px; font-weight: 700; white-space: nowrap; text-decoration: none"><span style="position: relative; display: flex; align-items: center; justify-content: center; width: 56px; height: 30px"><svg aria-hidden="true" width="64" height="36" sc-camel-view-box="0 0 64 36" style="position: absolute; top: -3px; left: -4px"><path d="M2 19C0.8 14.6 3.3 8.9 7 6C10.7 3.1 17.5 2.1 24 1.5C30.5 0.9 40 1.1 46 2.5C52 3.9 57.8 5.9 60 10C62.2 14.1 62.3 23 59 27C55.7 31 47.5 33.1 40 34C32.5 34.9 20.3 35 14 32.5C7.7 30 3.2 23.4 2 19Z" style="fill: #C9EBA5"></path></svg><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="position: relative; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 12h.01"></path><path d="M3 18h.01"></path><path d="M3 6h.01"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M8 6h13"></path></svg></span>Transactions</a>
+<a href="A-Budget.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></span>Budget</a>
+</nav>
+
+<sc-if value="{{sheetSwitch}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 30; display: flex; flex-direction: column; background: rgba(16,28,18,0.45)">
+<button type="button" aria-label="Close" sc-camel-on-click="{{closeSheet}}" style="flex: 1; min-height: 0; padding: 0; border: 0; background: transparent; cursor: pointer"></button>
+<dialog open="{{ true }}" aria-labelledby="tx-switch-title" style="position: static; display: flex; flex-direction: column; gap: 12px; width: auto; max-width: none; margin: 0; padding: 12px 20px 24px; border: 0; border-radius: 28px 28px 0 0; background: #FFFFFF; color: #1C3020; box-shadow: 0 -8px 30px rgba(16,28,18,0.18)">
+<span aria-hidden="true" style="align-self: center; width: 40px; height: 5px; border-radius: 3px; background: #D5E2CA"></span>
+<h2 id="tx-switch-title" style="margin: 4px 0 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600">Switch account</h2>
+<sc-for list="{{accounts}}" as="a" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{a.current}}" sc-camel-on-click="{{a.pick}}" style="display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px; box-sizing: border-box; border: 2px solid {{a.bd}}; border-radius: 18px; background: {{a.bg}}; color: #1C3020; font-family: inherit; text-align: left; cursor: pointer">
+<span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 22h18"></path><path d="M6 18v-7"></path><path d="M10 18v-7"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M12 2 20 7H4z"></path></svg></span>
+<span style="display: flex; flex-direction: column; flex: 1; min-width: 0">
+<span style="font-size: 16px; line-height: 21px; font-weight: 700">{{a.name}}</span>
+<span style="font-size: 13.5px; line-height: 19px; color: #4A5F4D; font-variant-numeric: tabular-nums">{{a.number}}</span>
+</span>
+<span style="flex-shrink: 0; font-size: 16px; line-height: 21px; font-weight: 700; font-variant-numeric: tabular-nums">{{a.balance}}</span>
+</button>
+</sc-for>
+<button type="button" sc-camel-on-click="{{closeSheet}}" style="min-height: 48px; border: 0; border-radius: 14px; background: transparent; color: #2E7333; font-family: inherit; font-size: 15.5px; font-weight: 700; cursor: pointer">Cancel</button>
+</dialog>
+</div>
+</sc-if>
+
+<sc-if value="{{sheetFilter}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 30; display: flex; flex-direction: column; background: rgba(16,28,18,0.45)">
+<button type="button" aria-label="Close" sc-camel-on-click="{{closeSheet}}" style="flex: 1; min-height: 0; padding: 0; border: 0; background: transparent; cursor: pointer"></button>
+<dialog open="{{ true }}" aria-labelledby="tx-filter-title" style="position: static; display: flex; flex-direction: column; gap: 14px; width: auto; max-width: none; margin: 0; padding: 12px 20px 24px; border: 0; border-radius: 28px 28px 0 0; background: #FFFFFF; color: #1C3020; box-shadow: 0 -8px 30px rgba(16,28,18,0.18)">
+<span aria-hidden="true" style="align-self: center; width: 40px; height: 5px; border-radius: 3px; background: #D5E2CA"></span>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<h2 id="tx-filter-title" style="margin: 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600">Filter by category</h2>
+<button type="button" sc-camel-on-click="{{clearDraft}}" style="min-height: 44px; padding: 0 4px; border: 0; background: transparent; color: #2E7333; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">Clear</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{filterCats}}" as="c" hint-placeholder-count="7">
+<button type="button" aria-pressed="{{c.on}}" sc-camel-on-click="{{c.toggle}}" style="min-height: 44px; padding: 0 16px; border: 1.5px solid {{c.bd}}; border-radius: 999px; background: {{c.bg}}; color: {{c.fg}}; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer">{{c.label}}</button>
+</sc-for>
+</div>
+<button type="button" sc-camel-on-click="{{applyFilter}}" style="min-height: 52px; margin-top: 4px; border: 0; border-radius: 16px; background: #2E7333; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer">{{draftLabel}}</button>
+</dialog>
+</div>
+</sc-if>
+
+<sc-if value="{{sheetMore}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 30; display: flex; flex-direction: column; background: rgba(16,28,18,0.45)">
+<button type="button" aria-label="Close" sc-camel-on-click="{{closeSheet}}" style="flex: 1; min-height: 0; padding: 0; border: 0; background: transparent; cursor: pointer"></button>
+<dialog open="{{ true }}" aria-labelledby="tx-more-title" style="position: static; display: flex; flex-direction: column; gap: 12px; width: auto; max-width: none; margin: 0; padding: 12px 20px 24px; border: 0; border-radius: 28px 28px 0 0; background: #FFFFFF; color: #1C3020; box-shadow: 0 -8px 30px rgba(16,28,18,0.18)">
+<span aria-hidden="true" style="align-self: center; width: 40px; height: 5px; border-radius: 3px; background: #D5E2CA"></span>
+<h2 id="tx-more-title" style="margin: 4px 0 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600">{{acct.name}}</h2>
+<div style="display: flex; flex-direction: column; border-radius: 18px; background: #F2F7EC; overflow: hidden">
+<button type="button" sc-camel-on-click="{{showDetails}}" style="display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 0 16px; box-sizing: border-box; border: 0; background: transparent; color: #1C3020; font-family: inherit; font-size: 16px; font-weight: 600; text-align: left; cursor: pointer"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>Account details</button>
+<button type="button" sc-camel-on-click="{{downloadStatement}}" style="display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 0 16px; box-sizing: border-box; border: 0; border-top: 1px solid #DDE8D3; background: transparent; color: #1C3020; font-family: inherit; font-size: 16px; font-weight: 600; text-align: left; cursor: pointer"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg>Download October statement</button>
+<button type="button" sc-camel-on-click="{{exportCsv}}" style="display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 0 16px; box-sizing: border-box; border: 0; border-top: 1px solid #DDE8D3; background: transparent; color: #1C3020; font-family: inherit; font-size: 16px; font-weight: 600; text-align: left; cursor: pointer"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>Export transactions (CSV)</button>
+</div>
+<button type="button" sc-camel-on-click="{{closeSheet}}" style="min-height: 48px; border: 0; border-radius: 14px; background: transparent; color: #2E7333; font-family: inherit; font-size: 15.5px; font-weight: 700; cursor: pointer">Cancel</button>
+</dialog>
+</div>
+</sc-if>
+
+<sc-if value="{{sheetDetails}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 30; display: flex; flex-direction: column; background: rgba(16,28,18,0.45)">
+<button type="button" aria-label="Close" sc-camel-on-click="{{closeSheet}}" style="flex: 1; min-height: 0; padding: 0; border: 0; background: transparent; cursor: pointer"></button>
+<dialog open="{{ true }}" aria-labelledby="tx-details-title" style="position: static; display: flex; flex-direction: column; gap: 14px; width: auto; max-width: none; margin: 0; padding: 12px 20px 24px; border: 0; border-radius: 28px 28px 0 0; background: #FFFFFF; color: #1C3020; box-shadow: 0 -8px 30px rgba(16,28,18,0.18)">
+<span aria-hidden="true" style="align-self: center; width: 40px; height: 5px; border-radius: 3px; background: #D5E2CA"></span>
+<h2 id="tx-details-title" style="margin: 4px 0 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600">Account details</h2>
+<dl style="margin: 0; display: flex; flex-direction: column; padding: 4px 16px; border-radius: 18px; background: #F2F7EC">
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 12px 0">
+<dt style="font-size: 14.5px; line-height: 21px; color: #4A5F4D">Account name</dt>
+<dd style="margin: 0; text-align: right; font-size: 14.5px; line-height: 21px; font-weight: 600">{{acct.name}}</dd>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid #DDE8D3">
+<dt style="font-size: 14.5px; line-height: 21px; color: #4A5F4D">Account number</dt>
+<dd style="margin: 0; text-align: right; font-size: 14.5px; line-height: 21px; font-weight: 600; font-variant-numeric: tabular-nums">{{acct.number}}</dd>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid #DDE8D3">
+<dt style="font-size: 14.5px; line-height: 21px; color: #4A5F4D">Type</dt>
+<dd style="margin: 0; text-align: right; font-size: 14.5px; line-height: 21px; font-weight: 600">{{acct.type}}</dd>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid #DDE8D3">
+<dt style="font-size: 14.5px; line-height: 21px; color: #4A5F4D">Available balance</dt>
+<dd style="margin: 0; text-align: right; font-size: 14.5px; line-height: 21px; font-weight: 600; font-variant-numeric: tabular-nums">{{acct.balance}}</dd>
+</div>
+</dl>
+<button type="button" sc-camel-on-click="{{copyNumber}}" style="display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; border: 0; border-radius: 16px; background: #2E7333; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>Copy account number</button>
+<button type="button" sc-camel-on-click="{{closeSheet}}" style="min-height: 48px; border: 0; border-radius: 14px; background: transparent; color: #2E7333; font-family: inherit; font-size: 15.5px; font-weight: 700; cursor: pointer">Done</button>
+</dialog>
+</div>
+</sc-if>
+
+<sc-if value="{{hasToast}}" hint-placeholder-val="{{ false }}">
+<div aria-live="polite" style="position: absolute; left: 16px; right: 16px; bottom: 94px; z-index: 40; display: flex; align-items: center; min-height: 48px; padding: 12px 16px; box-sizing: border-box; border-radius: 16px; background: #1C3020; color: #FFFFFF; font-size: 14.5px; line-height: 20px; font-weight: 600; box-shadow: 0 8px 24px rgba(16,28,18,0.25)">{{toast}}</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}">
+const ICON = {
+  coffee: "M10 2v2 M14 2v2 M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1 M6 2v2",
+  cart: "M7 21a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M18 21a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12",
+  transfer: "M8 3 4 7l4 4 M4 7h16 M16 21l4 -4 -4 -4 M20 17H4",
+  fuel: "M3 22h12 M4 9h10 M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18 M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5",
+  music: "M9 18V5l12-2v13 M3 18a3 3 0 1 0 6 0a3 3 0 1 0 -6 0 M15 16a3 3 0 1 0 6 0a3 3 0 1 0 -6 0",
+  briefcase: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16 M4 6h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2z",
+  wrench: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",
+  house: "M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8 M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
+  zap: "M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z",
+  ticket: "M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z M13 5v2 M13 17v2 M13 11v2",
+  dumbbell: "M14.4 14.4 9.6 9.6 M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z M21.5 21.5l-1.4 -1.4 M3.9 3.9 2.5 2.5 M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z",
+  book: "M12 7v14 M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",
+  trend: "M22 7L13.5 15.5L8.5 10.5L2 17 M16 7L22 7L22 13"
+};
+const ACCOUNTS = [
+  { id: 'everyday', name: 'Everyday account', number: '12-3456-0001234-00', type: 'Everyday transaction account', balance: '$1,284.50', inText: '+$1,042.00', outText: '−$644.65' },
+  { id: 'savings', name: 'Savings account', number: '12-3456-0001234-01', type: 'Online savings account', balance: '$735.00', inText: '+$4.12', outText: '−$200.00' }
+];
+const DATA = {
+  everyday: [
+    { label: 'Pending', rows: [
+      { name: 'Grounded Café', cat: 'Eating out', detail: 'Pending', amount: -6.5, icon: 'coffee', pending: true }
+    ] },
+    { label: 'Today · Sat 10 Oct', rows: [
+      { name: 'Corner Grocer', cat: 'Groceries', detail: '10:42 am', amount: -55.68, icon: 'cart', receipt: true, link: true },
+      { name: 'Transfer from Savings', cat: 'Transfer', detail: '8:15 am', amount: 200, icon: 'transfer' }
+    ] },
+    { label: 'Yesterday · Fri 9 Oct', rows: [
+      { name: 'Fuel Stop Te Rapa', cat: 'Transport', detail: '5:58 pm', amount: -72.4, icon: 'fuel', receipt: true },
+      { name: 'Grounded Café', cat: 'Eating out', detail: '3:15 pm', amount: -5.2, icon: 'coffee' },
+      { name: 'StreamTunes', cat: 'Subscriptions', detail: 'Recurring', amount: -14.99, icon: 'music' }
+    ] },
+    { label: 'Thu 8 Oct', rows: [
+      { name: 'Campus Café', cat: 'Eating out', detail: '12:35 pm', amount: -9.8, icon: 'coffee' }
+    ] },
+    { label: 'Wed 7 Oct', rows: [
+      { name: 'Hardware Hub', cat: 'Home', detail: '1:20 pm', amount: -38.9, icon: 'wrench', receipt: true },
+      { name: 'Employer Ltd', cat: 'Wages', detail: '', amount: 842, icon: 'briefcase' }
+    ] }
+  ],
+  earlier: [
+    { label: 'Tue 6 Oct', rows: [
+      { name: 'Corner Grocer', cat: 'Groceries', detail: '6:30 pm', amount: -62.15, icon: 'cart' },
+      { name: 'Campus Café', cat: 'Eating out', detail: '9:05 am', amount: -8.4, icon: 'coffee' }
+    ] },
+    { label: 'Mon 5 Oct', rows: [
+      { name: 'Campus Café', cat: 'Eating out', detail: '8:50 am', amount: -5.9, icon: 'coffee' },
+      { name: 'Rent payment', cat: 'Rent', detail: 'Recurring', amount: -170, icon: 'house' },
+      { name: 'PowerShare', cat: 'Power', detail: 'Recurring', amount: -20, icon: 'zap' }
+    ] },
+    { label: 'Sun 4 Oct', rows: [
+      { name: 'Grounded Café', cat: 'Eating out', detail: '10:20 am', amount: -12.4, icon: 'coffee' }
+    ] },
+    { label: 'Sat 3 Oct', rows: [
+      { name: 'Movie Lounge', cat: 'Entertainment', detail: '7:40 pm', amount: -24.5, icon: 'ticket' },
+      { name: 'Fuel Stop Te Rapa', cat: 'Transport', detail: '4:12 pm', amount: -58.33, icon: 'fuel' }
+    ] },
+    { label: 'Thu 1 Oct', rows: [
+      { name: 'Book Nook', cat: 'Study', detail: '11:20 am', amount: -34, icon: 'book' },
+      { name: 'Uni Gym', cat: 'Gym', detail: 'Recurring', amount: -52, icon: 'dumbbell' }
+    ] }
+  ],
+  savings: [
+    { label: 'Today · Sat 10 Oct', rows: [
+      { name: 'Transfer to Everyday', cat: 'Transfer', detail: '8:15 am', amount: -200, icon: 'transfer' }
+    ] },
+    { label: 'Thu 1 Oct', rows: [
+      { name: 'Interest', cat: 'Interest', detail: 'Monthly', amount: 4.12, icon: 'trend' }
+    ] }
+  ]
+};
+function money(n) {
+  const abs = Math.abs(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return (n < 0 ? '−' : '+') + '$' + abs;
+}
+class Component extends DCLogic {
+  componentWillUnmount() {
+    clearTimeout(this.toastTimer);
+  }
+  showToast(text) {
+    clearTimeout(this.toastTimer);
+    this.setState({ toast: text });
+    this.toastTimer = setTimeout(() => this.setState({ toast: null }), 2800);
+  }
+  renderVals() {
+    const s = this.state || {};
+    const accountId = s.account || 'everyday';
+    const account = ACCOUNTS.find((a) => a.id === accountId);
+    const chip = s.chip || 'all';
+    const query = s.query || '';
+    const cats = s.cats || [];
+    const draft = s.draft || [];
+    const loaded = !!s.loaded;
+    const sheet = s.sheet || null;
+
+    const base = accountId === 'everyday'
+      ? DATA.everyday.concat(loaded ? DATA.earlier : [])
+      : DATA.savings;
+    const q = query.trim().toLowerCase();
+    const qNum = q.replace(/[$,+−\-\s]/g, '');
+    const matches = (r, catList) => {
+      if (chip === 'in' && r.amount < 0) return false;
+      if (chip === 'out' && r.amount > 0) return false;
+      if (chip === 'receipt' && !r.receipt) return false;
+      if (catList.length && catList.indexOf(r.cat) === -1) return false;
+      if (q) {
+        const text = (r.name + ' ' + r.cat + ' ' + r.detail).toLowerCase();
+        const amt = Math.abs(r.amount).toFixed(2);
+        if (text.indexOf(q) === -1 && !(qNum && amt.indexOf(qNum) !== -1)) return false;
+      }
+      return true;
+    };
+
+    const groups = [];
+    base.forEach((g) => {
+      const rows = g.rows.filter((r) => matches(r, cats));
+      if (!rows.length) return;
+      groups.push({
+        label: g.label,
+        rows: rows.map((r, i) => {
+          const link = !!r.link && accountId === 'everyday';
+          return {
+            name: r.name,
+            meta: r.detail ? r.cat + ' · ' + r.detail : r.cat,
+            icon: ICON[r.icon],
+            iconBg: r.pending ? '#EEF3E8' : '#E6F4D8',
+            iconColor: r.pending ? '#4A5F4D' : '#2E7333',
+            amountText: money(r.amount),
+            amountColor: r.pending ? '#4A5F4D' : (r.amount > 0 ? '#2E7333' : '#1C3020'),
+            receipt: !!r.receipt,
+            link: link,
+            plain: !link,
+            divider: i === 0 ? '0' : '1px solid #E8F0E0'
+          };
+        })
+      });
+    });
+    const visibleCount = groups.reduce((n, g) => n + g.rows.length, 0);
+
+    const allRows = base.reduce((acc, g) => acc.concat(g.rows), []);
+    const catNames = [];
+    allRows.forEach((r) => { if (catNames.indexOf(r.cat) === -1) catNames.push(r.cat); });
+    const draftCount = allRows.filter((r) => matches(r, draft)).length;
+
+    const chipStyle = (id) => chip === id
+      ? { pressed: true, bg: '#2E7333', fg: '#FFFFFF', bd: '#2E7333', icon: '#FFFFFF' }
+      : { pressed: false, bg: '#FFFFFF', fg: '#1C3020', bd: '#C5D6B8', icon: '#2E7333' };
+    const setChip = (id) => () => this.setState({ chip: id });
+
+    return {
+      acct: account,
+      groups: groups,
+      noResults: visibleCount === 0,
+      canLoad: accountId === 'everyday' && !loaded,
+      showEnd: accountId === 'savings' || loaded,
+      loadEarlier: () => this.setState({ loaded: true }),
+
+      query: query,
+      hasQuery: query.length > 0,
+      setQuery: (e) => this.setState({ query: e.target.value }),
+      clearQuery: () => this.setState({ query: '' }),
+      clearAll: () => this.setState({ chip: 'all', query: '', cats: [] }),
+
+      chipAll: chipStyle('all'),
+      chipIn: chipStyle('in'),
+      chipOut: chipStyle('out'),
+      chipReceipt: chipStyle('receipt'),
+      pickAll: setChip('all'),
+      pickIn: setChip('in'),
+      pickOut: setChip('out'),
+      pickReceipt: setChip('receipt'),
+
+      catsActive: cats.length > 0,
+      catsCount: String(cats.length),
+      filterBd: cats.length > 0 ? '#2E7333' : '#D5E2CA',
+      filterLabel: cats.length > 0 ? 'Filter transactions, ' + cats.length + ' selected' : 'Filter transactions',
+      filterCats: catNames.map((c) => {
+        const on = draft.indexOf(c) !== -1;
+        return {
+          label: c,
+          on: on,
+          bg: on ? '#2E7333' : '#FFFFFF',
+          fg: on ? '#FFFFFF' : '#1C3020',
+          bd: on ? '#2E7333' : '#C5D6B8',
+          toggle: () => this.setState({ draft: on ? draft.filter((x) => x !== c) : draft.concat([c]) })
+        };
+      }),
+      draftLabel: draftCount === 1 ? 'Show 1 result' : 'Show ' + draftCount + ' results',
+      clearDraft: () => this.setState({ draft: [] }),
+      applyFilter: () => this.setState({ cats: draft.slice(), sheet: null }),
+
+      accounts: ACCOUNTS.map((a) => ({
+        name: a.name,
+        number: a.number,
+        balance: a.balance,
+        current: a.id === accountId,
+        bd: a.id === accountId ? '#2E7333' : '#DDE8D3',
+        bg: a.id === accountId ? '#E6F4D8' : '#FFFFFF',
+        pick: () => {
+          if (a.id === accountId) { this.setState({ sheet: null }); return; }
+          this.setState({ account: a.id, sheet: null, chip: 'all', query: '', cats: [], loaded: false });
+          this.showToast('Switched to ' + a.name);
+        }
+      })),
+
+      sheetSwitch: sheet === 'switch',
+      sheetFilter: sheet === 'filter',
+      sheetMore: sheet === 'more',
+      sheetDetails: sheet === 'details',
+      openSwitch: () => this.setState({ sheet: 'switch' }),
+      openFilter: () => this.setState({ sheet: 'filter', draft: cats.slice() }),
+      openMore: () => this.setState({ sheet: 'more' }),
+      closeSheet: () => this.setState({ sheet: null }),
+      showDetails: () => this.setState({ sheet: 'details' }),
+      downloadStatement: () => { this.setState({ sheet: null }); this.showToast('October statement downloaded'); },
+      exportCsv: () => { this.setState({ sheet: null }); this.showToast('Transactions exported as CSV'); },
+      copyNumber: () => {
+        try {
+          if (navigator.clipboard) navigator.clipboard.writeText(account.number).catch(() => {});
+        } catch (err) {}
+        this.setState({ sheet: null });
+        this.showToast('Account number copied');
+      },
+
+      hasToast: !!s.toast,
+      toast: s.toast || ''
+    };
+  }
+}
+</script>
+
+
+</body></html>

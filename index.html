@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F2F7EC">
+<title>Finance App Prototype</title>
+<meta name="description" content="Clickable phone prototype of a personal finance app: home, goals, insights, transactions and budget.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232E7333'/%3E%3Cpath d='M9 21c0-7 5-11 14-12-1 9-5 14-12 14' fill='none' stroke='%23C9EBA5' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+@font-face { font-family: 'Figtree'; font-weight: 400 700; font-display: swap; src: url("screens/assets/figtree-latin.woff2") format('woff2'); }
+@font-face { font-family: 'Jost'; font-weight: 500 700; font-display: swap; src: url("screens/assets/jost-latin.woff2") format('woff2'); }
+
+:root {
+  --bg: #E8EFE1;
+  --bg-2: #F5F7F1;
+  --ink: #1C3020;
+  --ink-2: #4A5F4D;
+  --line: #CFDCC3;
+  --accent: #2E7333;
+  --accent-soft: #C9EBA5;
+  --chip: #FFFFFF;
+  --device: #151915;
+  --device-edge: #2B312B;
+  --screen-bg: #F2F7EC;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1410;
+    --bg-2: #18201A;
+    --ink: #E7F0E1;
+    --ink-2: #A9BBA9;
+    --line: #2C3A2E;
+    --accent: #8FD07A;
+    --accent-soft: #24452A;
+    --chip: #1B241D;
+    --device: #050605;
+    --device-edge: #343B34;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1410;
+  --bg-2: #18201A;
+  --ink: #E7F0E1;
+  --ink-2: #A9BBA9;
+  --line: #2C3A2E;
+  --accent: #8FD07A;
+  --accent-soft: #24452A;
+  --chip: #1B241D;
+  --device: #050605;
+  --device-edge: #343B34;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(120% 90% at 70% 10%, var(--bg-2), var(--bg));
+  color: var(--ink);
+  font: 15px/1.45 'Figtree', 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.stage {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  padding: 24px;
+}
+
+/* ── Side panel (wide screens only) ── */
+.panel {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.panel .eyebrow { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); }
+.panel h1 { margin: 4px 0 0; font-family: 'Jost', 'Futura', sans-serif; font-weight: 600; font-size: 34px; line-height: 1.1; letter-spacing: -0.01em; }
+.panel p { margin: 0; color: var(--ink-2); }
+.panel .now { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 16px; background: var(--chip); border: 1px solid var(--line); }
+.panel .now span:first-child { font-size: 13px; color: var(--ink-2); }
+.panel .now strong { margin-left: auto; font-weight: 700; }
+.jump h2 { margin: 0 0 8px; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); }
+.jump-group { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.jump button, .restart {
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--chip);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.jump button:hover, .restart:hover { border-color: var(--accent); }
+.jump button[aria-current="true"] { background: var(--accent-soft); border-color: var(--accent); }
+.restart { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; }
+.restart svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ── Device ── */
+.device-wrap { position: relative; flex-shrink: 0; width: calc(414px * var(--scale, 1)); height: calc(868px * var(--scale, 1)); }
+.device {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 414px;
+  height: 868px;
+  padding: 12px;
+  border-radius: 62px;
+  background: var(--device);
+  box-shadow:
+    0 0 0 1.5px var(--device-edge),
+    0 2px 4px rgba(10, 20, 12, .12),
+    0 30px 60px -10px rgba(20, 40, 24, .35),
+    0 60px 120px -30px rgba(20, 40, 24, .35);
+  transform: scale(var(--scale, 1));
+  transform-origin: top left;
+}
+.device::before, .device::after {
+  /* side buttons */
+  content: "";
+  position: absolute;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--device-edge);
+}
+.device::before { left: -4px; top: 168px; height: 62px; box-shadow: 0 80px 0 var(--device-edge); }
+.device::after { right: -4px; top: 210px; height: 96px; }
+
+.screen {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  border-radius: 50px;
+  overflow: hidden;
+  background: var(--screen-bg);
+  isolation: isolate;
+}
+.statusbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 30px 0 44px;
+  color: #1C3020;
+  font: 600 16px/1 'Figtree', system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  pointer-events: none;
+}
+.statusbar .icons { display: flex; align-items: center; gap: 6px; }
+.statusbar svg { display: block; fill: #1C3020; }
+.island {
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  width: 122px;
+  height: 35px;
+  margin-left: -61px;
+  border-radius: 20px;
+  background: #000;
+  z-index: 6;
+}
+.viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: var(--screen-bg);
+}
+.viewport iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: var(--screen-bg);
+  visibility: hidden;
+}
+.viewport iframe.is-current { visibility: visible; z-index: 2; }
+.viewport iframe.is-entering { visibility: visible; }
+.home-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 7px;
+  width: 136px;
+  height: 5px;
+  margin-left: -68px;
+  border-radius: 3px;
+  background: #1C3020;
+  z-index: 7;
+  pointer-events: none;
+}
+.loader {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  background: var(--screen-bg);
+  color: #4A5F4D;
+  font-size: 14px;
+  transition: opacity .25s;
+}
+.loader.is-hidden { opacity: 0; pointer-events: none; }
+
+/* Wide enough for the panel beside the phone */
+@media (max-width: 899px) {
+  .panel { display: none; }
+}
+
+/* On a real phone, the prototype is the whole screen. */
+@media (max-width: 520px) {
+  body { background: var(--screen-bg); }
+  .stage { padding: 0; display: block; height: 100dvh; }
+  .device-wrap { width: 100%; height: 100%; }
+  .device { position: static; width: 100%; height: 100%; padding: 0; border-radius: 0; box-shadow: none; transform: none; background: var(--screen-bg); }
+  .device::before, .device::after, .statusbar, .island, .home-indicator { display: none; }
+  .screen { width: 100%; height: 100%; border-radius: 0; }
+  .viewport { top: env(safe-area-inset-top, 0px); bottom: env(safe-area-inset-bottom, 0px); }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <aside class="panel" aria-label="About this prototype">
+    <div>
+      <p class="eyebrow">COMPX324 · Phase III</p>
+      <h1>Finance app prototype</h1>
+    </div>
+    <p>Use it like a phone: tap through the tabs, open goals and insights, and try the forms. Goals you create, edit or pin show up everywhere in the app.</p>
+    <div class="now" aria-live="polite"><span>Showing</span><strong id="now-title">Home</strong></div>
+    <nav class="jump" aria-label="Jump to a screen">
+      <h2>Jump to</h2>
+      <div class="jump-group" id="jump-tabs"></div>
+      <div class="jump-group" id="jump-more"></div>
+    </nav>
+    <button type="button" class="restart" id="restart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>Restart prototype</button>
+  </aside>
+
+  <div class="device-wrap">
+    <div class="device">
+      <div class="screen">
+        <div class="statusbar" aria-hidden="true">
+          <span>9:41</span>
+          <span class="icons">
+            <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+            <svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 2.6c2.2 0 4.2.85 5.7 2.25l1.1-1.15A9.6 9.6 0 0 0 8 1 9.6 9.6 0 0 0 1.2 3.7l1.1 1.15A8.1 8.1 0 0 1 8 2.6Zm0 3.2c1.35 0 2.6.52 3.5 1.38l1.1-1.15A6.5 6.5 0 0 0 8 4.2a6.5 6.5 0 0 0-4.6 1.83l1.1 1.15A5 5 0 0 1 8 5.8Zm0 3.2c-.6 0-1.13.24-1.5.62L8 11.2l1.5-1.58A2.1 2.1 0 0 0 8 9Z"/></svg>
+            <svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.8" fill="none" stroke="#1C3020" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2.5"/><path d="M25 4.5v4c.8-.3 1.4-1.1 1.4-2s-.6-1.7-1.4-2Z" opacity=".45"/></svg>
+          </span>
+        </div>
+        <div class="island" aria-hidden="true"></div>
+        <div class="viewport" id="viewport">
+          <iframe id="frame-a" title="Finance app" tabindex="0"></iframe>
+          <iframe id="frame-b" title="Finance app" tabindex="-1" aria-hidden="true"></iframe>
+        </div>
+        <div class="loader" id="loader">Loading…</div>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var STORE_KEY = 'finance-proto:goals:v1';
+  var HOME = 'Main';
+  var SCREENS = {
+    'Main': 'Home',
+    'A-Goals': 'Goals',
+    'Insights': 'Insights',
+    'A-Transactions': 'Transactions',
+    'A-Budget': 'Budget',
+    'Goal-details': 'Goal details',
+    'Edit-goal': 'Edit goal',
+    'Goal-type': 'New goal · type',
+    'New-goal': 'New goal · details',
+    'Insight-fuel': 'Insight · biggest purchase',
+    'Insight-fuel-tx': 'Insight · purchases',
+    'Insight-eating-out': 'Insight · eating out',
+    'Insight-eating-out-tx': 'Insight · visits',
+    'E-receipt': 'E-receipt'
+  };
+  var TABS = ['Main', 'A-Goals', 'Insights', 'A-Transactions', 'A-Budget'];
+  var MORE = ['Goal-details', 'Goal-type', 'Insight-fuel', 'Insight-eating-out', 'E-receipt'];
+
+  var frames = [document.getElementById('frame-a'), document.getElementById('frame-b')];
+  var loader = document.getElementById('loader');
+  var nowTitle = document.getElementById('now-title');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var cur = 0;
+  var currentRoute = null;
+  var busy = false;
+  var queued = null;
+  var stack = [];
+  var index = 0;
+
+  // ── Routes: "Goal-details?id=road-trip" ⇄ "screens/Goal-details.dc.html?id=road-trip"
+  function screenName(route) { return route.split('?')[0]; }
+  function normalise(route) { return SCREENS[screenName(route)] ? route : HOME; }
+  function routeFromHash() {
+    var h = decodeURIComponent(window.location.hash.replace(/^#\/?/, ''));
+    return normalise(h || HOME);
+  }
+  function routeFromHref(href) {
+    var m = /([\w-]+)\.dc\.html(\?[^#]*)?/.exec(href);
+    return m ? normalise(m[1] + (m[2] || '')) : HOME;
+  }
+  function urlFor(route) {
+    var parts = route.split('?');
+    return 'screens/' + parts[0] + '.dc.html' + (parts[1] ? '?' + parts[1] : '');
+  }
+
+  // ── Scale the phone to fit the window
+  function fit() {
+    var small = window.matchMedia('(max-width: 520px)').matches;
+    var s = small ? 1 : Math.min(1, (window.innerHeight - 48) / 868, (window.innerWidth - 32) / 414);
+    document.documentElement.style.setProperty('--scale', String(Math.max(0.4, s)));
+  }
+  window.addEventListener('resize', fit);
+  fit();
+
+  // location.replace keeps frame navigations out of the browser history,
+  // so Back/Forward only ever move between screens.
+  function replaceFrame(frame, url) {
+    try {
+      frame.contentWindow.location.replace(new URL(url, document.baseURI).href);
+    } catch (e) {
+      frame.src = url;
+    }
+  }
+
+  // ── Load a screen into a frame and resolve once it has painted
+  function load(frame, url) {
+    return new Promise(function (resolve) {
+      var settled = false;
+      var started = Date.now();
+      function done() {
+        if (settled) return;
+        settled = true;
+        requestAnimationFrame(function () { requestAnimationFrame(resolve); });
+      }
+      function poll() {
+        if (settled) return;
+        var doc = null;
+        try { doc = frame.contentDocument; } catch (e) { doc = null; }
+        var root = doc && doc.getElementById('dc-root');
+        if (root && root.childElementCount > 0) {
+          var fonts = doc.fonts && doc.fonts.ready;
+          if (fonts) {
+            Promise.race([fonts, new Promise(function (r) { setTimeout(r, 400); })]).then(done);
+          } else {
+            done();
+          }
+          return;
+        }
+        if (Date.now() - started > 4000) { done(); return; }
+        setTimeout(poll, 16);
+      }
+      frame.onload = poll;
+      replaceFrame(frame, url);
+      setTimeout(done, 6000);
+    });
+  }
+
+  function animate(prev, next, dir) {
+    var duration = reduceMotion.matches ? 0 : dir === 'tab' ? 200 : 380;
+    var ease = 'cubic-bezier(.22,.8,.24,1)';
+    var opts = { duration: duration, easing: ease, fill: 'both' };
+    var anims = [];
+    next.classList.add('is-entering');
+    if (duration === 0 || !next.animate) {
+      return Promise.resolve();
+    }
+    if (dir === 'tab') {
+      next.style.zIndex = 3;
+      anims.push(next.animate([{ opacity: 0 }, { opacity: 1 }], opts));
+    } else if (dir === 'back') {
+      next.style.zIndex = 1;
+      prev.style.zIndex = 3;
+      anims.push(next.animate([{ transform: 'translateX(-28%)', filter: 'brightness(.94)' }, { transform: 'none', filter: 'none' }], opts));
+      anims.push(prev.animate([{ transform: 'none', boxShadow: '-12px 0 28px rgba(16,28,18,.14)' }, { transform: 'translateX(100%)', boxShadow: '-12px 0 28px rgba(16,28,18,0)' }], opts));
+    } else {
+      next.style.zIndex = 3;
+      prev.style.zIndex = 1;
+      anims.push(next.animate([{ transform: 'translateX(100%)', boxShadow: '-12px 0 28px rgba(16,28,18,0)' }, { transform: 'none', boxShadow: '-12px 0 28px rgba(16,28,18,.14)' }], opts));
+      anims.push(prev.animate([{ transform: 'none', filter: 'none' }, { transform: 'translateX(-28%)', filter: 'brightness(.94)' }], opts));
+    }
+    return Promise.all(anims.map(function (a) { return a.finished; })).then(function () {
+      anims.forEach(function (a) { a.cancel(); });
+    });
+  }
+
+  function show(route, dir) {
+    if (busy) { queued = [route, dir]; return; }
+    busy = true;
+    var prev = frames[cur];
+    var next = frames[1 - cur];
+    load(next, urlFor(route)).then(function () {
+      var first = currentRoute === null;
+      return (first ? Promise.resolve() : animate(prev, next, dir)).then(function () {
+        next.classList.add('is-current');
+        next.classList.remove('is-entering');
+        next.style.zIndex = '';
+        next.setAttribute('tabindex', '0');
+        next.removeAttribute('aria-hidden');
+        prev.classList.remove('is-current', 'is-entering');
+        prev.style.zIndex = '';
+        prev.setAttribute('tabindex', '-1');
+        prev.setAttribute('aria-hidden', 'true');
+        prev.onload = null;
+        replaceFrame(prev, 'about:blank');
+        cur = 1 - cur;
+        currentRoute = route;
+        loader.classList.add('is-hidden');
+        updatePanel(route);
+        busy = false;
+        if (queued) {
+          var q = queued;
+          queued = null;
+          go(q[0], q[1]);
+        }
+      });
+    });
+  }
+
+  // ── History: every screen change is a browser history entry
+  function go(route, dir) {
+    route = normalise(route);
+    if (route === currentRoute) return;
+    if (dir === 'auto') dir = stack[index - 1] === route ? 'back' : 'forward';
+    if (dir === 'back' && index > 0 && stack[index - 1] === route) {
+      window.history.back(); // popstate does the rest
+      return;
+    }
+    stack = stack.slice(0, index + 1);
+    stack.push(route);
+    index = stack.length - 1;
+    window.history.pushState({ i: index, stack: stack }, '', '#/' + route);
+    show(route, dir);
+  }
+
+  window.addEventListener('popstate', function (e) {
+    var st = e.state;
+    var route = routeFromHash();
+    var to = st && typeof st.i === 'number' ? st.i : 0;
+    var dir = to < index ? 'back' : 'forward';
+    if (st && st.stack) stack = st.stack.slice();
+    index = to;
+    stack[index] = route;
+    if (route !== currentRoute) show(route, dir);
+  });
+
+  // Screens call this through Proto.go (screens/assets/proto.js).
+  window.__phoneShell = {
+    navigate: function (href, dir) { go(routeFromHref(href), dir || 'auto'); },
+    // Space the screens leave for the drawn status bar and home indicator.
+    insets: function () {
+      return window.matchMedia('(max-width: 520px)').matches ? { top: 0, bottom: 0 } : { top: 50, bottom: 24 };
+    }
+  };
+
+  // ── Side panel
+  function updatePanel(route) {
+    var name = screenName(route);
+    nowTitle.textContent = SCREENS[name];
+    document.title = SCREENS[name] + ' · Finance App Prototype';
+    Array.prototype.forEach.call(document.querySelectorAll('.jump button'), function (b) {
+      b.setAttribute('aria-current', b.dataset.route === name ? 'true' : 'false');
+    });
+  }
+  function addJump(container, names) {
+    names.forEach(function (name) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.dataset.route = name;
+      b.textContent = SCREENS[name];
+      b.addEventListener('click', function () { go(name, 'tab'); });
+      container.appendChild(b);
+    });
+  }
+  addJump(document.getElementById('jump-tabs'), TABS);
+  addJump(document.getElementById('jump-more'), MORE);
+
+  document.getElementById('restart').addEventListener('click', function () {
+    try { window.localStorage.removeItem(STORE_KEY); } catch (e) { /* nothing stored */ }
+    stack = [HOME];
+    index = 0;
+    window.history.replaceState({ i: 0, stack: stack }, '', '#/' + HOME);
+    currentRoute = null;
+    loader.classList.remove('is-hidden');
+    queued = null;
+    if (busy) { queued = [HOME, 'tab']; return; }
+    show(HOME, 'tab');
+  });
+
+  // ── Start
+  var start = routeFromHash();
+  var st = window.history.state;
+  if (st && st.stack && typeof st.i === 'number') {
+    stack = st.stack.slice();
+    index = st.i;
+    stack[index] = start;
+  } else {
+    stack = [start];
+    index = 0;
+  }
+  window.history.replaceState({ i: index, stack: stack }, '', '#/' + start);
+  show(start, 'tab');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Insight · Fuel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="assets/react.production.min.js"></script>
+<script src="assets/react-dom.production.min.js"></script>
+<script src="assets/proto.js"></script>
+<script src="assets/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4q9DbZs.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/jost-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+html,body,#dc-root,#dc-root>div{height:100%}
+body{margin:0;overflow:hidden;background:#F2F7EC;-webkit-tap-highlight-color:transparent}
+a{color:#2E7333}a:hover{color:#1C3020}
+main{scrollbar-width:none}main::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div style="position: relative; width: 100%; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; background: #F2F7EC; color: #1C3020; font-family: 'Figtree', 'Segoe UI', system-ui, sans-serif; font-size: 15px; line-height: 1.4">
+<header style="flex-shrink: 0; display: flex; align-items: center; gap: 4px; padding: 12px 12px 4px">
+<a href="Insights.dc.html" aria-label="Back to Insights" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; color: #1C3020; text-decoration: none"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"><path d="m15 18-6-6 6-6"></path></svg></a>
+<h1 style="margin: 0; flex: 1; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600">Insight</h1>
+<button type="button" aria-label="More options" sc-camel-on-click="{{openMore}}" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #1C3020; cursor: pointer"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></button>
+</header>
+<main style="flex: 1; min-height: 0; overflow-y: auto">
+<div style="display: flex; flex-direction: column; gap: 20px; padding: 8px 20px 28px">
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; font-size: 14px; line-height: 20px; color: #4A5F4D"><span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #E6F4D8; color: #2E7333"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 22h12"></path><path d="M4 9h10"></path><path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18"></path><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5"></path></svg></span>Transport · Fri 9 Oct</p>
+<h2 style="margin: 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 28px; line-height: 34px; font-weight: 600; letter-spacing: -0.01em">Fuel was your biggest single purchase this week</h2>
+</div>
+
+<section aria-labelledby="fuel-hero" style="position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 4px; padding: 22px; border-radius: 28px; background: #C9EBA5">
+<div aria-hidden="true" style="position: absolute; top: 18px; right: 18px; width: 70px; height: 70px; background-image: radial-gradient(circle, rgba(46,115,51,0.38) 1.6px, transparent 2.1px); background-size: 14px 14px"></div>
+<p id="fuel-hero" style="position: relative; margin: 0; font-size: 15px; line-height: 20px; font-weight: 600">Fuel Stop Te Rapa</p>
+<p style="position: relative; margin: 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 56px; line-height: 60px; font-weight: 600; letter-spacing: -0.02em">$72.40</p>
+<p style="position: relative; margin: 2px 0 0; font-size: 14px; line-height: 20px; color: #2B4A2F">26% of everything you bought this week</p>
+</section>
+
+<section aria-labelledby="fuel-chart-title" style="display: flex; flex-direction: column; padding: 20px; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06)">
+<h3 id="fuel-chart-title" style="margin: 0; font-size: 16px; line-height: 22px; font-weight: 700">Everything you bought, 4–10 Oct</h3>
+<p style="margin: 2px 0 0; font-size: 13.5px; line-height: 19px; color: #4A5F4D">Biggest first, not counting bills like rent</p>
+<ol style="list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px">
+<li style="display: flex; flex-direction: column; gap: 6px"><span style="display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; line-height: 20px"><span style="font-weight: 700">Fuel Stop Te Rapa</span><span style="flex-shrink: 0; font-weight: 700; font-variant-numeric: tabular-nums">$72.40</span></span><span aria-hidden="true" style="display: block; width: 100.0%; height: 8px; border-radius: 0 4px 4px 0; background: #E9A91C"></span></li>
+<li style="display: flex; flex-direction: column; gap: 6px"><span style="display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; line-height: 20px"><span style="font-weight: 500">Corner Grocer</span><span style="flex-shrink: 0; font-weight: 700; font-variant-numeric: tabular-nums">$62.15</span></span><span aria-hidden="true" style="display: block; width: 85.84%; height: 8px; border-radius: 0 4px 4px 0; background: #C8DDB6"></span></li>
+<li style="display: flex; flex-direction: column; gap: 6px"><span style="display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; line-height: 20px"><span style="font-weight: 500">Corner Grocer</span><span style="flex-shrink: 0; font-weight: 700; font-variant-numeric: tabular-nums">$55.68</span></span><span aria-hidden="true" style="display: block; width: 76.91%; height: 8px; border-radius: 0 4px 4px 0; background: #C8DDB6"></span></li>
+<li style="display: flex; flex-direction: column; gap: 6px"><span style="display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; line-height: 20px"><span style="font-weight: 500">Hardware Hub</span><span style="flex-shrink: 0; font-weight: 700; font-variant-numeric: tabular-nums">$38.90</span></span><span aria-hidden="true" style="display: block; width: 53.73%; height: 8px; border-radius: 0 4px 4px 0; background: #C8DDB6"></span></li>
+<li style="display: flex; flex-direction: column; gap: 6px"><span style="display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; line-height: 20px"><span style="font-weight: 500">Grounded Café</span><span style="flex-shrink: 0; font-weight: 700; font-variant-numeric: tabular-nums">$12.40</span></span><span aria-hidden="true" style="display: block; width: 17.13%; height: 8px; border-radius: 0 4px 4px 0; background: #C8DDB6"></span></li>
+</ol>
+<p style="display: flex; justify-content: space-between; gap: 12px; margin: 14px 0 0; font-size: 14px; line-height: 20px; color: #4A5F4D"><span>5 smaller purchases, each under $10</span><span style="flex-shrink: 0; font-variant-numeric: tabular-nums">$35.80</span></p>
+<p style="display: flex; justify-content: space-between; gap: 12px; margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #E8F0E0; font-size: 15px; line-height: 20px"><span style="font-weight: 600; color: #4A5F4D">Week total</span><span style="font-weight: 700; font-variant-numeric: tabular-nums">$277.33</span></p>
+</section>
+
+<section aria-labelledby="fuel-why" style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06)">
+<h3 id="fuel-why" style="margin: 0; font-size: 16px; line-height: 22px; font-weight: 700">Why you're seeing this</h3>
+<p style="margin: 0; font-size: 15px; line-height: 23px; color: #4A5F4D">One fill-up cost more than either of your grocery shops. Most weeks, a grocery shop is your biggest single purchase.</p>
+<p style="margin: 0; font-size: 15px; line-height: 23px; color: #4A5F4D">Your last four fill-ups averaged $58.10, so this one was about $14 above your normal.</p>
+</section>
+
+<a href="Insight-fuel-tx.dc.html" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 0 16px 0 20px; border-radius: 16px; background: #2E7333; color: #FFFFFF; font-size: 16px; line-height: 22px; font-weight: 700; text-decoration: none">See all 10 purchases<svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"><path d="m9 18 6-6-6-6"></path></svg></a>
+
+<section aria-labelledby="fuel-manage" style="display: flex; flex-direction: column; gap: 8px">
+<h3 id="fuel-manage" style="margin: 0; font-size: 12.5px; line-height: 18px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5F4D">Manage this insight</h3>
+<div style="display: flex; flex-direction: column; border-radius: 22px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,48,32,0.06), 0 6px 18px rgba(28,48,32,0.06); overflow: hidden">
+<sc-if value="{{notDismissed}}" hint-placeholder-val="{{ true }}">
+<button type="button" sc-camel-on-click="{{dismiss}}" style="display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 12px 16px; box-sizing: border-box; border: 0; background: transparent; color: #1C3020; font-family: inherit; text-align: left; cursor: pointer"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="flex-shrink: 0; fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span style="display: flex; flex-direction: column; flex: 1; min-width: 0"><span style="font-size: 16px; line-height: 21px; font-weight: 600">Dismiss this insight</span><span style="font-size: 13.5px; line-height: 19px; color: #4A5F4D">Clears it from your list</span></span></button>
+</sc-if>
+<sc-if value="{{dismissed}}" hint-placeholder-val="{{ false }}">
+<div aria-live="polite" style="display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 12px 8px 12px 16px; box-sizing: border-box"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="flex-shrink: 0; fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M20 6 9 17l-5-5"></path></svg><span style="display: flex; flex-direction: column; flex: 1; min-width: 0"><span style="font-size: 16px; line-height: 21px; font-weight: 600">Insight dismissed</span><span style="font-size: 13.5px; line-height: 19px; color: #4A5F4D">It won't show in your list</span></span><button type="button" sc-camel-on-click="{{undoDismiss}}" style="flex-shrink: 0; min-height: 44px; padding: 0 12px; border: 0; border-radius: 12px; background: transparent; color: #2E7333; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">Undo</button></div>
+</sc-if>
+<button type="button" role="switch" aria-checked="{{muted}}" sc-camel-on-click="{{toggleMute}}" style="display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 12px 16px; box-sizing: border-box; border: 0; border-top: 1px solid #E8F0E0; background: transparent; color: #1C3020; font-family: inherit; text-align: left; cursor: pointer"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="flex-shrink: 0; fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M17 17H4a1 1 0 0 1-.74-1.673C4.59 13.956 6 12.499 6 8a6 6 0 0 1 .258-1.742"></path><path d="m2 2 20 20"></path><path d="M8.668 3.01A6 6 0 0 1 18 8c0 2.687.77 4.653 1.707 6.05"></path></svg><span style="display: flex; flex-direction: column; flex: 1; min-width: 0"><span style="font-size: 16px; line-height: 21px; font-weight: 600">Mute big-purchase insights</span><span style="font-size: 13.5px; line-height: 19px; color: #4A5F4D">Stop showing me this type in future</span></span><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 48px; height: 28px; box-sizing: border-box; border: 2px solid {{switchBd}}; border-radius: 14px; background: {{switchBg}}"><span style="position: absolute; top: {{knobTop}}px; left: {{knobLeft}}px; width: {{knobSize}}px; height: {{knobSize}}px; border-radius: 50%; background: {{knobBg}}"></span></span></button>
+</div>
+</section>
+
+</div>
+</main>
+<nav aria-label="Main" style="flex-shrink: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 8px 0 16px; background: #FFFFFF; border-top: 1px solid #DDE8D3">
+<a href="Main.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span>Home</a>
+<a href="A-Goals.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>Goals</a>
+<a href="Insights.dc.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #1C3020; font-size: 11.5px; line-height: 16px; font-weight: 700; white-space: nowrap; text-decoration: none"><span style="position: relative; display: flex; align-items: center; justify-content: center; width: 56px; height: 30px"><svg aria-hidden="true" width="64" height="36" sc-camel-view-box="0 0 64 36" style="position: absolute; top: -3px; left: -4px"><path d="M2 19C0.8 14.6 3.3 8.9 7 6C10.7 3.1 17.5 2.1 24 1.5C30.5 0.9 40 1.1 46 2.5C52 3.9 57.8 5.9 60 10C62.2 14.1 62.3 23 59 27C55.7 31 47.5 33.1 40 34C32.5 34.9 20.3 35 14 32.5C7.7 30 3.2 23.4 2 19Z" style="fill: #C9EBA5"></path></svg><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="position: relative; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span>Insights</a>
+<a href="A-Transactions.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 12h.01"></path><path d="M3 18h.01"></path><path d="M3 6h.01"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M8 6h13"></path></svg></span>Transactions</a>
+<a href="A-Budget.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 50px; color: #4A5F4D; font-size: 11.5px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 30px; border-radius: 15px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></span>Budget</a>
+</nav>
+
+<sc-if value="{{sheetMore}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 30; display: flex; flex-direction: column; background: rgba(16,28,18,0.45)">
+<button type="button" aria-label="Close" sc-camel-on-click="{{closeSheet}}" style="flex: 1; min-height: 0; padding: 0; border: 0; background: transparent; cursor: pointer"></button>
+<dialog open="{{ true }}" aria-labelledby="fuel-more-title" style="position: static; display: flex; flex-direction: column; gap: 12px; width: auto; max-width: none; margin: 0; padding: 12px 20px 24px; border: 0; border-radius: 28px 28px 0 0; background: #FFFFFF; color: #1C3020; box-shadow: 0 -8px 30px rgba(16,28,18,0.18)">
+<span aria-hidden="true" style="align-self: center; width: 40px; height: 5px; border-radius: 3px; background: #D5E2CA"></span>
+<h2 id="fuel-more-title" style="margin: 4px 0 0; font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif; font-size: 22px; line-height: 28px; font-weight: 600">This insight</h2>
+<div style="display: flex; flex-direction: column; border-radius: 18px; background: #F2F7EC; overflow: hidden">
+<button type="button" sc-camel-on-click="{{markUnread}}" style="display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 0 16px; box-sizing: border-box; border: 0; background: transparent; color: #1C3020; font-family: inherit; font-size: 16px; font-weight: 600; text-align: left; cursor: pointer"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="flex-shrink: 0; fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Mark as unread</button>
+<button type="button" sc-camel-on-click="{{reportProblem}}" style="display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 0 16px; box-sizing: border-box; border: 0; border-top: 1px solid #DDE8D3; background: transparent; color: #1C3020; font-family: inherit; font-size: 16px; font-weight: 600; text-align: left; cursor: pointer"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="flex-shrink: 0; fill: none; stroke: #2E7333; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><path d="M4 22v-7"></path></svg>Something's not right</button>
+</div>
+<button type="button" sc-camel-on-click="{{closeSheet}}" style="min-height: 48px; border: 0; border-radius: 14px; background: transparent; color: #2E7333; font-family: inherit; font-size: 15.5px; font-weight: 700; cursor: pointer">Cancel</button>
+</dialog>
+</div>
+</sc-if>
+
+<sc-if value="{{hasToast}}" hint-placeholder-val="{{ false }}">
+<div aria-live="polite" style="position: absolute; left: 16px; right: 16px; bottom: 94px; z-index: 40; display: flex; align-items: center; min-height: 48px; padding: 12px 16px; box-sizing: border-box; border-radius: 16px; background: #1C3020; color: #FFFFFF; font-size: 14.5px; line-height: 20px; font-weight: 600; box-shadow: 0 8px 24px rgba(16,28,18,0.25)">{{toast}}</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}">
+class Component extends DCLogic {
+  componentWillUnmount() {
+    clearTimeout(this.toastTimer);
+  }
+  showToast(text) {
+    clearTimeout(this.toastTimer);
+    this.setState({ toast: text });
+    this.toastTimer = setTimeout(() => this.setState({ toast: null }), 2800);
+  }
+  renderVals() {
+    const s = this.state || {};
+    const muted = !!s.muted;
+    const dismissed = !!s.dismissed;
+
+    return {
+
+      dismissed: dismissed,
+      notDismissed: !dismissed,
+      dismiss: () => this.setState({ dismissed: true }),
+      undoDismiss: () => this.setState({ dismissed: false }),
+      muted: muted,
+      switchBg: muted ? '#2E7333' : '#FFFFFF',
+      switchBd: muted ? '#2E7333' : '#6F8570',
+      knobBg: muted ? '#FFFFFF' : '#6F8570',
+      knobSize: muted ? 20 : 14,
+      knobTop: muted ? 2 : 5,
+      knobLeft: muted ? 22 : 5,
+      toggleMute: () => {
+        this.setState({ muted: !muted });
+        this.showToast(muted ? "Big-purchase insights are back on" : "You won't see big-purchase insights");
+      },
+      sheetMore: s.sheet === 'more',
+      openMore: () => this.setState({ sheet: 'more' }),
+      closeSheet: () => this.setState({ sheet: null }),
+      markUnread: () => { this.setState({ sheet: null }); this.showToast('Marked as unread'); },
+      reportProblem: () => { this.setState({ sheet: null }); this.showToast("Thanks. We'll check this insight"); },
+      hasToast: !!s.toast,
+      toast: s.toast || ''
+    };
+  }
+}
+</script>
+
+
+</body></html>
