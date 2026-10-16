@@ -237,7 +237,7 @@ main{scrollbar-width:none}main::-webkit-scrollbar{display:none}
 <sc-for list="{{g.rows}}" as="r" hint-placeholder-count="2">
 <li style="border-top: {{r.divider}}">
 <sc-if value="{{r.link}}" hint-placeholder-val="{{ false }}">
-<a href="E-receipt.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; color: #1C3020; text-decoration: none">
+<a href="{{r.href}}" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; color: #1C3020; text-decoration: none">
 <span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: {{r.iconBg}}; color: {{r.iconColor}}"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="{{r.icon}}"></path></svg></span>
 <span style="display: flex; flex-direction: column; flex: 1; min-width: 0">
 <span style="font-size: 16px; line-height: 21px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
@@ -411,7 +411,7 @@ const DATA = {
       { name: 'Grounded Café', cat: 'Eating out', detail: 'Pending', amount: -6.5, icon: 'coffee', pending: true }
     ] },
     { label: 'Today · Sat 10 Oct', rows: [
-      { name: 'Corner Grocer', cat: 'Groceries', detail: '10:42 am', amount: -55.68, icon: 'cart', receipt: true, link: true },
+      { name: 'Corner Grocer', cat: 'Groceries', detail: '10:42 am', amount: -55.68, icon: 'cart', receipt: true, link: true, href: 'E-receipt.dc.html' },
       { name: 'Transfer from Savings', cat: 'Transfer', detail: '8:15 am', amount: 200, icon: 'transfer' }
     ] },
     { label: 'Yesterday · Fri 9 Oct', rows: [
@@ -438,7 +438,7 @@ const DATA = {
       { name: 'PowerShare', cat: 'Power', detail: 'Recurring', amount: -20, icon: 'zap' }
     ] },
     { label: 'Sun 4 Oct', rows: [
-      { name: 'Grounded Café', cat: 'Eating out', detail: '10:20 am', amount: -12.4, icon: 'coffee' }
+      { name: 'Grounded Café', cat: 'Eating out', detail: '10:20 am', amount: -12.4, icon: 'coffee', receipt: true, link: true, href: 'E-receipt-cafe.dc.html' }
     ] },
     { label: 'Sat 3 Oct', rows: [
       { name: 'Movie Lounge', cat: 'Entertainment', detail: '7:40 pm', amount: -24.5, icon: 'ticket' },
@@ -518,6 +518,7 @@ class Component extends DCLogic {
             amountColor: r.pending ? '#4A5F4D' : (r.amount > 0 ? '#2E7333' : '#1C3020'),
             receipt: !!r.receipt,
             link: link,
+            href: r.href || '',
             plain: !link,
             divider: i === 0 ? '0' : '1px solid #E8F0E0'
           };

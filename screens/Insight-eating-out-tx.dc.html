@@ -207,7 +207,7 @@ main{scrollbar-width:none}main::-webkit-scrollbar{display:none}
 <sc-for list="{{g.rows}}" as="r" hint-placeholder-count="2">
 <li style="border-top: {{r.divider}}; background: {{r.rowBg}}">
 <sc-if value="{{r.link}}" hint-placeholder-val="{{ false }}">
-<a href="E-receipt.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; color: #1C3020; text-decoration: none">
+<a href="{{r.href}}" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; color: #1C3020; text-decoration: none">
 <span style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: {{r.iconBg}}; color: {{r.iconColor}}"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="{{r.icon}}"></path></svg></span>
 <span style="display: flex; flex-direction: column; flex: 1; min-width: 0">
 <span style="font-size: 16px; line-height: 21px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
@@ -264,7 +264,7 @@ const ROWS = [
   { day: 'Thu 8 Oct', name: 'Campus Café', cat: 'Eating out', time: '12:35 pm', amount: 9.80, icon: 'coffee', receipt: false, link: false, pending: false, biggest: false },
   { day: 'Tue 6 Oct', name: 'Campus Café', cat: 'Eating out', time: '9:05 am', amount: 8.40, icon: 'coffee', receipt: false, link: false, pending: false, biggest: false },
   { day: 'Mon 5 Oct', name: 'Campus Café', cat: 'Eating out', time: '8:50 am', amount: 5.90, icon: 'coffee', receipt: false, link: false, pending: false, biggest: false },
-  { day: 'Sun 4 Oct', name: 'Grounded Café', cat: 'Eating out', time: '10:20 am', amount: 12.40, icon: 'coffee', receipt: false, link: false, pending: false, biggest: false }
+  { day: 'Sun 4 Oct', name: 'Grounded Café', cat: 'Eating out', time: '10:20 am', amount: 12.40, icon: 'coffee', receipt: true, link: true, href: 'E-receipt-cafe.dc.html?from=visits', pending: false, biggest: false }
 ];
 const CHIPS = [{ id: 'all', label: 'All 6' }, { id: 'largest', label: 'Largest first' }];
 function money(n) {
@@ -285,6 +285,7 @@ class Component extends DCLogic {
       receipt: r.receipt,
       biggest: r.biggest,
       link: r.link,
+      href: r.href || '',
       plain: !r.link,
       rowBg: r.biggest ? '#FFF7E6' : '#FFFFFF',
       divider: i === 0 ? '0' : '1px solid #E8F0E0'
